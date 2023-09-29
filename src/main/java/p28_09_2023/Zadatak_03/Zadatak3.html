@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+  <button id="showInBtn" onclick="myFunction()">Show in</button>
+</body>
+<script>
+var i = 0;
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+function myFunction() {
+  var body = document.querySelector("body");
+  var div = document.createElement("div");
+  div.id = "id-" + i;
+  i = i + 1;
+  div.style.background="#ff9803";
+  div.style.color="#fff";
+  div.style.fontSize="40px";
+  div.innerHTML = "IT Bootcamp";
+  const number1 =  getRandomInt(10000);
+  console.log("number1", number1);
+  setTimeout(function(){  body.appendChild(div); }, getRandomInt(number1));
+}
+
+</script>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  #id-123 {
+    background-color: #ff9803;
+    color: #fff;
+    font-size: 40px;
+  }
+</style>
+</html>
