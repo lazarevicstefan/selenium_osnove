@@ -1,0 +1,11 @@
+<suite name="Smoke Suite1" verbose="1" >
+    <test name="Login Tests" >
+        <classes>
+            <class name="p05_10_2023.BootstrapTableTests" />
+            <methods>
+                <include name=" "/>
+                <exclude name=" "/>
+            </methods>
+        </classes>
+    </test>
+</suite>
