@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 import swagLabs_retry.swagLabsRetry;
 
 public class CartPageTests extends BasicTest{
-    @Test
+    @Test(priority = 1,retryAnalyzer = swagLabsRetry.class)
     public void verifyTheUrl(){
         inventoryPage.clickOnCartIcon();
         Assert.assertTrue(cartPage.isCartPage(), "There should be Cart page");
     }
-    @Test
+    @Test(priority = 1,retryAnalyzer = swagLabsRetry.class)
     public void verifyTheTitlePage (){
         String expectedTitle = "Swag Labs";
         String product = "Sauce Labs Backpack";
@@ -23,12 +23,18 @@ public class CartPageTests extends BasicTest{
         Assert.assertEquals(cartPage.getTitle(),expectedTitle
                 ,"Title should be '" + expectedTitle + "'");
     }
-    @Test(priority = 3)
+    @Test(priority = 3,retryAnalyzer = swagLabsRetry.class)
     public void verifyTheTitleInHead(){
         String expectedTitle = "Swag Labs";
 
         inventoryPage.clickOnCartIcon();
         Assert.assertEquals(cartPage.getTitleInHead(),expectedTitle
                 ,"Title should be '" + expectedTitle + "'");
+    }
+    @Test(priority = 4,retryAnalyzer = swagLabsRetry.class)
+    public void verifyIfTheHamburgerMenuButtonIsPresented(){
+        inventoryPage.clickOnCartIcon();
+        cartPage.clickAndShowLeftMenu();
+        Assert.assertTrue(cartPage.verifyLeftMenuIsShowing(),"Left menu should be visible");
     }
 }
