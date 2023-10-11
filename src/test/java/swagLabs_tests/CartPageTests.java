@@ -8,5 +8,12 @@ public class CartPageTests extends BasicTest{
     public void verifyTheUrl(){
         Assert.assertTrue(inventoryPage.isInventoryPage(), "There should be Inventory page");
     }
+    @Test
+    public void verifyTheTitlePage (){
+        String expectedTitle = "Swag Labs";
+        Assert.assertEquals(inventoryPage.getTitle(),expectedTitle
+                ,"Title should be '" + expectedTitle + "'");
+    }
+
 
 }
