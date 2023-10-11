@@ -53,5 +53,10 @@ public class CartPageTests extends BasicTest{
         inventoryPage.clickOnCartIcon();
         Assert.assertTrue(cartPage.verifyCartIconIsEnable(),"Cart icon should be enabled");
     }
-
+    @Test
+    public void verifyIfTheHamburgerButtonIsWorking(){
+        inventoryPage.clickOnCartIcon();
+        cartPage.clickAndShowLeftMenu();
+        Assert.assertTrue(cartPage.verifyLeftMenuIsShowing(),"Left menu should be visible");
+    }
 }
