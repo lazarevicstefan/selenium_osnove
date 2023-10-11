@@ -59,4 +59,9 @@ public class CartPageTests extends BasicTest{
         cartPage.clickAndShowLeftMenu();
         Assert.assertTrue(cartPage.verifyLeftMenuIsShowing(),"Left menu should be visible");
     }
+    @Test
+    public void verifyIfTheCartIconIsWorking(){
+        inventoryPage.clickOnCartIcon();
+        Assert.assertTrue(cartPage.verifyCartIconIsEnable(),"Cart icon should be visible");
+    }
 }
