@@ -6,14 +6,17 @@ import org.testng.annotations.Test;
 public class CartPageTests extends BasicTest{
     @Test
     public void verifyTheUrl(){
-        Assert.assertTrue(inventoryPage.isInventoryPage(), "There should be Inventory page");
+        inventoryPage.clickOnCartIcon();
+        Assert.assertTrue(cartPage.isCartPage(), "There should be Cart page");
     }
     @Test
     public void verifyTheTitlePage (){
         String expectedTitle = "Swag Labs";
-        Assert.assertEquals(inventoryPage.getTitle(),expectedTitle
+        String product = "Sauce Labs Backpack";
+        inventoryPage.addToCartProduct(product);
+        inventoryPage.clickOnCartIcon();
+        Assert.assertEquals(cartPage.getTitle(),expectedTitle
                 ,"Title should be '" + expectedTitle + "'");
     }
-
 
 }
