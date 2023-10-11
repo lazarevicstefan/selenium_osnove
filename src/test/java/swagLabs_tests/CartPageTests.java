@@ -74,5 +74,12 @@ public class CartPageTests extends BasicTest{
         Assert.assertEquals(inventoryPage.getCartNumber(),expected
                 ,"On Cart there should be two products");
     }
+    @Test
+    public void verifyTheSubHeaderTitle(){
+        String expectedHeader = "Your Cart";
 
+        inventoryPage.clickOnCartIcon();
+        Assert.assertEquals(cartPage.getSubHeaderTitle(),expectedHeader
+                ,"Header title should be '" + expectedHeader + "'");
+    }
 }
