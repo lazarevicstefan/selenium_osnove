@@ -64,4 +64,15 @@ public class CartPageTests extends BasicTest{
         inventoryPage.clickOnCartIcon();
         Assert.assertTrue(cartPage.verifyCartIconIsEnable(),"Cart icon should be visible");
     }
+    @Test
+    public void verifyIfTheCartIconHasCorrectNumberOfAddedItems() {
+        String expected = "1";
+        String product = "Sauce Labs Backpack";
+
+        inventoryPage.addToCartProduct(product);
+
+        Assert.assertEquals(inventoryPage.getCartNumber(),expected
+                ,"On Cart there should be two products");
+    }
+
 }
